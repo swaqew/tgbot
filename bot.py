@@ -265,7 +265,7 @@ def get_apt_list(update: Update, context):
 def get_repl_logs(update: Update, context):
     try:
         result = subprocess.run(
-            ["bash", "-c", f"cat /var/log/postgresql/postgresql.log | grep 'repl' | tail -n 15"],
+            ["bash", "-c", f"cat /var/log/postgresql/postgresql.log | tail -n 15"],
             capture_output=True,
             text=True
         )
